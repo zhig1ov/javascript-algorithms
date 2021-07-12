@@ -10,7 +10,14 @@
 */
 
 function findVowels(str) {
-    // Напишите код здесь
+    const vowels = ['а', 'я', 'о', 'ё', 'у', 'ю', 'ы', 'и', 'э', 'е']
+    let sum = 0
+    vowels.forEach (function(currentValue) {
+        if (str.toLowerCase().includes(currentValue)) {
+            sum++
+        }
+    })
+    return sum
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
