@@ -7,7 +7,27 @@
 */
 
 function primes(num) {
-    // Напишите код здесь
+    function primes(n) {
+  let res=[];
+  if (n <= 2) { return 0}
+  for (let i = 2; i <= n; i++) {
+    let flag = 1;
+    if (i > 2 && i % 2 != 0)
+    {
+        for (let j = 3; j*j <= i ; j=j+2)
+        {
+            if (i%j==0)
+            {
+                flag=0;
+                break;
+            }
+        }
+    }
+    else if (i != 2) flag = 0;
+    if (flag==1) {res.push(i)}
+}
+   return res.length - 1;
+}
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
