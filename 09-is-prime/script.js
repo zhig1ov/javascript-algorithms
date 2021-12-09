@@ -9,18 +9,10 @@
  * если n простое, и false — если нет.
 */
 
-function isPrime(n) {
-    if (n < 2) {
-        return false
-      } else {
-        for (let i = 2; i <= n; i++) {
-          if (n % i === 0 && n !== 2) {
-            return false
-          } else {
-            return true
-          }
-        }
-      }
+const isPrime = num => {
+  for(let i = 2; i < num; i++)
+    if(num % i === 0) return false;
+  return num > 1;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
