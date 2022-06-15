@@ -17,6 +17,24 @@ function palindrome(str) {
   const reverse = str.toLowerCase().split('').reverse().join('');
   const result = reverse === str.toLowerCase()
   return result
+} //Данное решение занимает много памяти. Ниже более эффективное решение.
+
+
+//Решение с помощью двух указателей
+
+const twoPalindrome = (str) => {
+  let left = 0,
+      right = str.length - 1
+      
+  while(left < right) {
+    if (str[left] !== str[right]) {
+      return false
+    }
+    left++
+    right--
+  }
+
+  return true
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
